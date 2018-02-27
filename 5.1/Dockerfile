@@ -72,5 +72,5 @@ COPY docker-varnish-entrypoint /usr/local/bin/
 
 ENTRYPOINT ["docker-varnish-entrypoint"]
 
-EXPOSE 6081
+EXPOSE 80
 CMD ["varnishd"]

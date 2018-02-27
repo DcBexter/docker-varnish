@@ -47,10 +47,10 @@ $ docker run --name my-running-varnish -d my-varnish
 ### Exposing the port
 
 ```console
-$ docker run --name my-running-varnish -d -p 8080:6081 my-varnish
+$ docker run --name my-running-varnish -d -p 80:80 my-varnish
 ```
 
-Then you can hit `http://localhost:8080` or `http://host-ip:8080` in your browser.
+Then you can hit `http://localhost:80` or `http://host-ip:80` in your browser.
 
 ## Advanced configuration using environment variables
 
