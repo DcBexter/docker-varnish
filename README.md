@@ -1,5 +1,6 @@
 # Supported tags and respective `Dockerfile` links
 
+- [`5.2` (*5.2/Dockerfile*)](https://github.com/dcbexter/docker-varnish/blob/master/5.2/Dockerfile)
 - [`5.1.2`, `5.1`, `5`, `latest` (*5.1/Dockerfile*)](https://github.com/tripviss/docker-varnish/blob/master/5.1/Dockerfile)
 - [`4.1.6`, `4.1`, `4` (*4.1/Dockerfile*)](https://github.com/tripviss/docker-varnish/blob/master/4.1/Dockerfile)
 
@@ -33,7 +34,7 @@ $ docker run --name my-running-varnish -v /path/to/default.vcl:/usr/local/etc/va
 Alternatively, a simple `Dockerfile` can be used to generate a new image that includes the necessary `default.vcl` (which is a much cleaner solution than the bind mount above):
 
 ```dockerfile
-FROM tripviss/varnish:5.1
+FROM dcbexter/docker-varnish:5.2
 
 COPY default.vcl /usr/local/etc/varnish/
 ```
@@ -75,7 +76,7 @@ $ docker run --name my-running-varnish -e "VARNISH_VCL=/root/custom.vcl" -v /pat
 You can also change the ports used in a Dockerfile.
 
 ```
-FROM tripviss/varnish:5.1
+FROM dcbexter/docker-varnish:5.2
 
 ENV VARNISH_PORT 8080
 ENV VARNISH_DAEMON_OPTS "additional varnish options here"
@@ -97,7 +98,7 @@ To install Varnish Modules, you will need the Varnish source to compile against.
 Install VMODs in your Varnish project's Dockerfile. For example, to install the Querystring module:
 
 ```dockerfile
-FROM tripviss/varnish:5.1
+FROM dcbexter/docker-varnish:5.2
 
 # Install Querystring Varnish module
 ENV QUERYSTRING_VERSION 1.0.1
@@ -134,10 +135,10 @@ Please see [the Docker installation documentation](https://docs.docker.com/insta
 
 ## Issues
 
-If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/tripviss/docker-varnish/issues).
+If you have any problems with or questions about this image, please contact us through a [GitHub issue](https://github.com/dcbexter/docker-varnish/issues).
 
 ## Contributing
 
 You are invited to contribute new features, fixes, or updates, large or small; we are always thrilled to receive pull requests, and do our best to process them as fast as we can.
 
-Before you start to code, we recommend discussing your plans through a [GitHub issue](https://github.com/tripviss/docker-varnish/issues), especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
+Before you start to code, we recommend discussing your plans through a [GitHub issue](https://github.com/dcbexter/docker-varnish/issues), especially for more ambitious contributions. This gives other contributors a chance to point you in the right direction, give you feedback on your design, and help you find out if someone else is working on the same thing.
